@@ -2,6 +2,7 @@
 This is a dynamic eCommerce bookstore application built using PHP and MySQL. The platform allows users to browse, search, and purchase books while providing an intuitive admin interface to manage inventory and orders.
 
 🌟 Features
+
 User Features:
  - User Registration and Login: Secure authentication for customers.
  - Browse Books: Browse through categories or search by title, author, or genre.
