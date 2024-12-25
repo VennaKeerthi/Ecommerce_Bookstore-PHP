@@ -17,7 +17,11 @@ Admin Features:
  - Order Management: View and update order statuses.
 
 🛠️ Tech Stack
+
 Frontend: HTML, CSS, JavaScript
+
 Backend: PHP
+
 Database: MySQL
+
 Server: Apache (via XAMPP)
