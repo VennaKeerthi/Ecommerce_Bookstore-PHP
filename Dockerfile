@@ -1,17 +1,20 @@
-# Use the official PHP image from Docker Hub with Apache
-FROM php:8.1-apache
+# Use an official PHP image with Apache
+FROM php:8.0-apache
 
-# Enable mod_rewrite (commonly used in PHP apps)
+# Enable Apache mod_rewrite (if needed)
 RUN a2enmod rewrite
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /var/www/html
 
-# Copy all your files to the container
+# Copy the local PHP files into the container
 COPY . /var/www/html/
 
-# Expose the port for the application
+# Configure Apache to use 'register.php' as the default index page
+RUN echo 'DirectoryIndex register.php' >> /etc/apache2/apache2.conf
+
+# Expose the container's port 80
 EXPOSE 80
 
-# Start Apache server to serve PHP files
+# Start Apache in the foreground
 CMD ["apache2-foreground"]
