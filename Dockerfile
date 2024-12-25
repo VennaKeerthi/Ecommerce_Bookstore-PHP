@@ -1,6 +1,10 @@
 # Use an official PHP image with Apache
 FROM php:8.0-apache
 
+# Install the mysqli extension and other required dependencies
+RUN apt-get update && apt-get install -y libmysqlclient-dev \
+    && docker-php-ext-install mysqli
+
 # Enable Apache mod_rewrite (if needed)
 RUN a2enmod rewrite
 
